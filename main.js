@@ -7,11 +7,11 @@ setOptions();
 function getCurrentGiftTime(hour) {
   if (hour >= 0 && hour < 10) {
     return 0;
-  } else if (currentHour >= 10 && currentHour < 13) {
+  } else if (hour >= 10 && hour < 13) {
     return 10;
-  } else if (currentHour >= 13 && currentHour < 16) {
+  } else if (hour >= 13 && hour < 16) {
     return 13;
-  } else if (currentHour >= 16 && currentHour < 20) {
+  } else if (hour >= 16 && hour < 20) {
     return 16;
   } else {
     return 20;
