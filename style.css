@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto Mono", monospace;
+    background: #f0f0f0;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.clock {
+    display: flex;
+}
+
+.clock div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+
+    background: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.clock div span {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.title {
+    text-align: center;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-size: medium;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: large;
+    }
+
+    .clock div {
+        width: 70px;
+        height: 70x;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .clock div span {
+        font-size: 25px;
+
+        font-weight: 700;
+    }
+}
+
+#player {
+    position: absolute;
+    left: -9999px; /* hides the video */
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+button {
+    padding: 10px 16px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.gifts-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gift-box {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+.gift-base {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(145deg, #ff6b6b, #ee5a6f);
+    position: absolute;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gift-lid {
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(145deg, #ff8787, #ff6b6b);
+    position: absolute;
+    top: 15%;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s ease;
+    transform-origin: bottom;
+}
+
+.gift-ribbon-v {
+    width: 15px;
+    height: 100%;
+    background: #ffd93d;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gift-ribbon-h {
+    width: 100%;
+    height: 15px;
+    background: #ffd93d;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gift-bow {
+    width: 40px;
+    height: 30px;
+    background: #ffd93d;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 0 0;
+}
+
+.gift-bow::before,
+.gift-bow::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #ffd93d;
+    border-radius: 50%;
+    top: 5px;
+}
+
+.gift-bow::before {
+    left: -20px;
+}
+
+.gift-bow::after {
+    right: -20px;
+}
+
+.gift-box.opened .gift-lid {
+    transform: translateY(-50px) rotateX(-20deg);
+    opacity: 0.8;
+}
+
+.gift-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 1em;
+    transition: all 0.6s ease 0.3s;
+    background-color: white;
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.gift-box.opened .gift-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.gift-box:nth-child(2) .gift-base {
+    background: linear-gradient(145deg, #4ecdc4, #44a3a0);
+}
+
+.gift-box:nth-child(2) .gift-lid {
+    background: linear-gradient(145deg, #6dd5d0, #4ecdc4);
+}
+
+.gift-box:nth-child(3) .gift-base {
+    background: linear-gradient(145deg, #a29bfe, #6c5ce7);
+}
+
+.gift-box:nth-child(3) .gift-lid {
+    background: linear-gradient(145deg, #b8b2ff, #a29bfe);
+}
+
+.instruction {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #764ba2;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .clock span {
+        font-size: 2em;
+    }
+
+    .gift-box {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.hidden {
+    display: none;
+}

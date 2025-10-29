@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+    </header>
+    <body>
+        <div class="container" id="counter-container">
+            <div class="title">Keyu's Birthday In</div>
+            <div class="clock">
+                <div class="days">
+                    <span id="days">00</span>
+                    <p>DAYS</p>
+                </div>
+                <div class="hours">
+                    <span id="hours">00</span>
+                    <p>HOURS</p>
+                </div>
+                <div class="minutes">
+                    <span id="minutes">00</span>
+                    <p>MINS</p>
+                </div>
+                <div class="seconds">
+                    <span id="seconds">00</span>
+                    <p>SECS</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="birthday-container" style="display: none">
+            <div class="title">🎂 Happy Birthday, Keyuri Mehta! 🎉</div>
+            <img
+                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnAxdGxrcTZmNDdnMTRpNXVtcG8zMjk2b3Fxc3FmYmxlYjlrMGlnNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/udA2Fe86iC1wc/giphy.gif"
+                style="margin-bottom: 20px"
+                height="100px"
+                width="120px"
+            />
+            <div class="sub-title">A little choice, a lot of love 💌</div>
+            <!--gift box animation goes here -->
+            <div class="gifts-container" id="g-container">
+                <div class="gift-box" onclick="openGift(this, '🎁', 'option1')">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-base">
+                        <div class="gift-ribbon-v"></div>
+                        <div class="gift-ribbon-h"></div>
+                    </div>
+                    <div class="gift-content" id="gift-content-1">🎁</div>
+                </div>
+                <div class="gift-box" onclick="openGift(this, '🎈', 'option2')">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-base">
+                        <div class="gift-ribbon-v"></div>
+                        <div class="gift-ribbon-h"></div>
+                    </div>
+                    <div class="gift-content" id="gift-content-2">🎈</div>
+                </div>
+                <!-- Next gift countdown-->
+                <div class="title" id="next-gift-time"></div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <script src="./main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    </footer>
+</html>
