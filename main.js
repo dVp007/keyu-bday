@@ -3,6 +3,7 @@ const seconds = document.getElementById("seconds");
 const minutes = document.getElementById("minutes");
 const hours = document.getElementById("hours");
 const days = document.getElementById("days");
+setOptions();
 function getCurrentGiftTime(hour) {
   if (hour >= 0 && hour < 10) {
     return 0;
@@ -58,8 +59,6 @@ if (todayAt12.getTime() === birthdate.getTime()) {
   birthdate.setFullYear(today.getFullYear());
   totalSeconds = (birthdate - today) / 1000;
 }
-
-setOptions();
 
 const setDisplay = (sec) => {
   days.innerText = String(Math.floor(sec / (24 * 60 * 60))).padStart(2, "0");
@@ -167,7 +166,7 @@ function openGift(giftBox, emoji, id) {
 }
 
 function setOptions() {
-  if (currentGift) return;
+  if (localStorage.getItem(getCurrentGiftTime(new Date().getHours()))) return;
   localStorage.setItem(
     "0",
     JSON.stringify({
