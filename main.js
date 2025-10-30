@@ -11,7 +11,7 @@ function getCurrentGiftTime(hour) {
     return 10;
   } else if (hour >= 13 && hour < 16) {
     return 13;
-  } else if (hour >= 16 && hour < 20) {
+  } else if (hour >= 16 && hour < 18) {
     return 16;
   } else {
     return 20;
